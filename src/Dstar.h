@@ -32,7 +32,7 @@ class Dstar
     public:
         void InitDstar(std::vector <std::vector<char> > &_maze);
         void PrepareRepair(std::list<Point*> &openList, std::list<Point*> &L, Point* Xc);
-        std::list<Point*> InitPlan(std::list<Point*> &openList, std::list<Point*> L, Point* Xc, Point* G); // Xc stands for currrent state, G stands for goal state
+        std::list<Point*> InitPlan(std::list<Point*> &openList, std::list<Point*> &L, Point* Xc, Point* G); // Xc stands for currrent state, G stands for goal state
         std::list<Point*> RepairReplan(std::list<Point*> &openList, std::list<Point*> &L, Point* Xc, Point* G);
     
     private:
@@ -42,7 +42,7 @@ class Dstar
         float SensorCost(Point* X, Point* Y);
         bool IsInRange(const Point* Xc, const Point* Y);
         Point* GetKMin(std::list<Point*> &openList);
-        std::list<Point*> GetBackPointerList(std::vector<std::vector<Point*> > &maze, Point* Xc, Point* G);
+        std::list<Point*> GetBackPointerList(const std::list<Point*> &L, Point* Xc, Point* G);
         std::list<Point*> SensedState(std::list<Point*> &L, Point* Xc);
         std::list<Point*> GetNeighbor(std::list<Point*> &L, Point* Xc);
         
